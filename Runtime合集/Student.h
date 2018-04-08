@@ -12,4 +12,7 @@
 @property(nonatomic,copy)NSString *name;
 @property(nonatomic,assign)NSInteger age;
 + (instancetype)studentWithName:(NSString *)name age:(NSInteger)age;
+
+- (void)eat;
+- (void)run;
 @end

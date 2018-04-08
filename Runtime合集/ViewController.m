@@ -24,7 +24,21 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    [self changeInstancePropertyValue];
+//    [self changeInstancePropertyValue];
+    
+    [self runtimeChangeMethod];
+    
+    [self.stu eat];
+}
+
+
+- (void)runtimeChangeMethod {
+    
+    Method runMethod = class_getInstanceMethod([self.stu class], @selector(run));
+    
+    Method eatMethod = class_getInstanceMethod([self.stu class], @selector(eat));
+    
+    method_exchangeImplementations(runMethod, eatMethod);
 }
 
 

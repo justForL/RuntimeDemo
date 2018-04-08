@@ -21,4 +21,12 @@
     return [[self alloc] initWithName:name age:age];
 }
 
+- (void)eat {
+    NSLog(@"eat....");
+}
+
+- (void)run {
+    NSLog(@"run....");
+}
+
 @end
