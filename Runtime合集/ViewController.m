@@ -10,6 +10,7 @@
 #import "Student.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "Student+New.h"
 @interface ViewController ()
 @property(nonatomic,strong)Student *stu;
 @end
@@ -23,14 +24,21 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    //动态改变值属性
 //    [self changeInstancePropertyValue];
+    //交换方法
+//    [self runtimeChangeMethod];
+//    [self.stu eat];
     
-    [self runtimeChangeMethod];
-    
-    [self.stu eat];
+    //runtime关联
+    [self a];
 }
 
+- (void)a {
+    NSLog(@"%zd",self.stu.isNew);
+    self.stu.isNew = YES;
+    NSLog(@"%zd",self.stu.isNew);
+}
 
 - (void)runtimeChangeMethod {
     
