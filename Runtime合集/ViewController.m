@@ -51,14 +51,20 @@
 
 
 - (void)changeInstancePropertyValue {
+    //累加要获取类的属性条数
     unsigned int count = 0;
+    //获取属性个数的集合
     Ivar *ivars = class_copyIvarList([self.stu class], &count);
     
+    //遍历集合
     for (int i = 0; i < count; i++) {
+        //获得单个属性
         Ivar ivar = ivars[i];
+        //转化成c字符串
         const char *ivarName = ivar_getName(ivar);
+        //将c串转化成oc字符串
         NSString *propertyName = [NSString stringWithUTF8String:ivarName];
-        
+        //判断 取出想要改变值的属性
         if ([propertyName isEqualToString:@"_name"]) {
             object_setIvar(self.stu, ivar, @"小红");
         }

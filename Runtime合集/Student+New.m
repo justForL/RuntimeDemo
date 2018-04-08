@@ -11,7 +11,20 @@
 @implementation Student (New)
 
 
-static const char _isNew;
+//static const char _isNew;
+
+
+
+//- (void)setIsNew:(BOOL)isNew {
+//    objc_setAssociatedObject(self, &_isNew, @(isNew), OBJC_ASSOCIATION_ASSIGN);
+//}
+//
+//
+//- (BOOL)isNew {
+//    return [objc_getAssociatedObject(self, &_isNew) boolValue];
+//}
+
+
 
 - (void)setIsNew:(BOOL)isNew {
     objc_setAssociatedObject(self, @selector(isNew), @(isNew), OBJC_ASSOCIATION_ASSIGN);
