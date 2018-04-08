@@ -7,23 +7,51 @@
 //
 
 #import "ViewController.h"
-
+#import "Student.h"
+#import <objc/runtime.h>
+#import <objc/message.h>
 @interface ViewController ()
-
+@property(nonatomic,strong)Student *stu;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"%@---%zd",self.stu.name,self.stu.age);
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    [self changeInstancePropertyValue];
 }
 
 
+- (void)changeInstancePropertyValue {
+    unsigned int count = 0;
+    Ivar *ivars = class_copyIvarList([self.stu class], &count);
+    
+    for (int i = 0; i < count; i++) {
+        Ivar ivar = ivars[i];
+        const char *ivarName = ivar_getName(ivar);
+        NSString *propertyName = [NSString stringWithUTF8String:ivarName];
+        
+        if ([propertyName isEqualToString:@"_name"]) {
+            object_setIvar(self.stu, ivar, @"小红");
+        }
+    }
+    NSLog(@"%@---%zd",self.stu.name,self.stu.age);
+}
+
+
+#pragma mark - lazyload
+- (Student *)stu {
+    if (_stu == nil) {
+        
+        _stu = ((Student * (*) (id, SEL, NSString *, NSInteger))objc_msgSend)((id) [Student class], @selector(studentWithName:age:),@"小明",13);
+        
+    }
+    return _stu;
+}
 @end

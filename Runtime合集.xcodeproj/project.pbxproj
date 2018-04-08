@@ -13,6 +13,7 @@
 		1A78B1522079BDEB00929A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A78B1512079BDEB00929A0A /* Assets.xcassets */; };
 		1A78B1552079BDEB00929A0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A78B1532079BDEB00929A0A /* LaunchScreen.storyboard */; };
 		1A78B1582079BDEB00929A0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B1572079BDEB00929A0A /* main.m */; };
+		1A78B1602079BDFA00929A0A /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B15F2079BDFA00929A0A /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		1A78B1542079BDEB00929A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A78B1562079BDEB00929A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A78B1572079BDEB00929A0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A78B15E2079BDFA00929A0A /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		1A78B15F2079BDFA00929A0A /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				1A78B1492079BDEB00929A0A /* AppDelegate.m */,
 				1A78B14B2079BDEB00929A0A /* ViewController.h */,
 				1A78B14C2079BDEB00929A0A /* ViewController.m */,
+				1A78B15E2079BDFA00929A0A /* Student.h */,
+				1A78B15F2079BDFA00929A0A /* Student.m */,
 				1A78B14E2079BDEB00929A0A /* Main.storyboard */,
 				1A78B1512079BDEB00929A0A /* Assets.xcassets */,
 				1A78B1532079BDEB00929A0A /* LaunchScreen.storyboard */,
@@ -145,6 +150,7 @@
 				1A78B14D2079BDEB00929A0A /* ViewController.m in Sources */,
 				1A78B1582079BDEB00929A0A /* main.m in Sources */,
 				1A78B14A2079BDEB00929A0A /* AppDelegate.m in Sources */,
+				1A78B1602079BDFA00929A0A /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
